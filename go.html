@@ -1,0 +1,12 @@
+<script>
+function get(name){
+if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+    return decodeURIComponent(name[1]);
+}
+if( !get("go").includes("http") ){
+    window.location.href = "https://duckduckgo.com/?t=h_&q=" + get("go");
+}else{
+    window.location.href =  get("go");
+}
+
+</script>
